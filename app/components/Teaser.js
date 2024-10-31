@@ -2,9 +2,9 @@ import React from "react"
 
 export default function Teaser ({content},key=1) {
   return (
-      <div id={`teaser-${key}`} className="teaser" >
+      <div id={`teaser-${key}`} className="teaser dark:bg-black" >
               <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-                  <div className="mx-auto max-w-2xl text-center">
+                  <div className="mx-auto max-w-2xl text-center dark:text-white">
                       {...content?.heading}
                       <br/>
                       {...content?.content}

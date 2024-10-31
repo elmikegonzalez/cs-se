@@ -36,23 +36,23 @@ export default function TextBlock({ content }) {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-black">
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <dt className="flex items-center gap-x-3 text-base font-semibold text-gray-900 justify-center">
+          <dt className="flex items-center gap-x-3 text-base font-semibold text-gray-900 justify-center dark:text-white">
             {/* ----- ICON COMING FROM SELECT MENU IN CONTENTSTACK ----- */}
             {icon()}
           </dt>
 
           <h5
-            className="mt-8 text-2xl font-bold text-center tracking-widest text-neutral-700"
+            className="mt-8 text-2xl font-bold text-center tracking-widest text-neutral-700 dark:text-white"
             {...content?.$?.header}
           >
             {content.header}
           </h5>
 
           <p
-            className="mx-5 mt-8 font-normal text-left leading-8 text-gray-700 text-block whitespace-pre-line"
+            className="mx-5 mt-8 font-normal text-left leading-8 text-gray-700 text-block whitespace-pre-line dark:text-white"
             {...content?.$?.text}
           >
             {content.multi}

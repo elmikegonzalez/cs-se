@@ -11,7 +11,7 @@ export default function ImageGallery({ content }) {
               <img src={item.image.url} className="object-cover" />
             </div>
             </a>
-            <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900" {...item?.$?.header}>
+            <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900 dark:text-white" {...item?.$?.header}>
               {item.header}
             </p>
           </div>

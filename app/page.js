@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import SplitBlock from "./components/SplitBlock";
-import CardSection from "./components/CardSection";
+import CardCollection from "@/app/components/CardCollection";
 import Teaser from "./components/Teaser";
 
 export default function Home({ params }) {
@@ -53,14 +53,13 @@ export default function Home({ params }) {
         }
         if (item.hasOwnProperty("card_collection")) {
           console.log(entry.page_content[index])
-          return <CardSection key={index} content={item.card_collection} />;
+          return <CardCollection key={index} content={item.card_collection} />;
         }
         if (item.hasOwnProperty("teaser")) {
           console.log(entry.page_content[index])
           return <Teaser content={item.teaser} key={index}  />;
         }
       })}
-
       <Footer />
     </>
   );
