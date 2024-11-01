@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import ImageGallery from "./components/ImageGallery";
 import SplitBlock from "./components/SplitBlock";
-import CardCollection from "@/app/components/CardCollection";
+import CardCollection from "./components/CardCollection";
 import Teaser from "./components/Teaser";
 
 export default function Home({ params }) {
