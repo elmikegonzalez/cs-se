@@ -32,10 +32,11 @@ export default function Home({ params }) {
   if (loading) {
     return;
   }
-
+// console.log(entry.video_banner)
   return (
     <>
       <NavBar />
+      <Video content={entry.video_banner}/>
       <Hero content={entry.hero_banner[0]} />
       {entry.page_content?.map((item, index) => {
         if (item.hasOwnProperty("text_block")) {
@@ -55,7 +56,7 @@ export default function Home({ params }) {
           return <CardCollectionFlow key={index} content={item.card_collection} />;
         }
         if (item.hasOwnProperty("video_banner")) {
-          console.log(entry.page_content[index])
+          // console.log(entry.page_content[index])
           return <Video content={item.video_banner} key={index}  />;
         }
       })}
