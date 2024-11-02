@@ -3,15 +3,6 @@ export default function Hero({ content }) {
     <div className="bg-black ">
       <div className="relative isolate overflow-hidden">
 
-        {/* ----- VIDEO FROM CONTENTSTACK ----- */}
-        <video className="h-full w-full rounded-lg" controls autoPlay muted>
-          <source
-              src="https://docs.material-tailwind.com/demo.mp4"
-              type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
         {/* ----- BACKGROUND IMAGE FROM CONTENTSTACK ----- */}
         <img src={content?.background_image?.url}
              className="absolute inset-0 -z-10 h-full w-full object-cover object-center opacity-75"/>
