@@ -1,7 +1,7 @@
 export default function Hero({ content }) {
   return (
     <div className="bg-black ">
-      <div className="relative isolate overflow-hidden">
+      <div className="relative isolate overflow">
 
         {/* ----- BACKGROUND IMAGE FROM CONTENTSTACK ----- */}
         <img src={content?.background_image?.url}

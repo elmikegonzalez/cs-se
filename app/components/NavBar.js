@@ -38,8 +38,7 @@ export default function NavBar() {
 
       <header className="bg-white dark:bg-evil shadow-md max-w-full mx-auto">
         <nav
-            className="flex items-center justify-between p-4 lg:px-8 bg-white bg-opacity-35 dark:bg-evil fixed w-full z-20 top-0 start-0 border-b-2 border-evil dark:border-evil">
-          {/*<nav className="flex items-center justify-between p-6 lg:px-8">*/}
+            className="flex items-center justify-between p-8 lg:px-8 bg-transparent bg-opacity-35 dark:bg-evil w-full z-20 top-0 start-0 border-b-2 border-evil dark:border-evil">
           <div className="flex lg:flex-1">
             <img src="../images/BajaCraft_logo800x800dark.png" alt="" className="max-w-24 dark:hidden inline-block"/>
             <img src="../images/BajaCraft_logo800x800white.png" alt="" className="max-w-24 hidden dark:inline-block"/>
