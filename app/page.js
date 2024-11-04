@@ -46,10 +46,10 @@ export default function Home({ params }) {
           // console.log(entry.page_content[index])
           return <TextBlock key={index} content={item.text_block} />;
         }
-        // if (item.hasOwnProperty("image_gallery")) {
-        //   // console.log(entry.page_content[index])
-        //   return <ImageGallery key={index} content={item.image_gallery} />;
-        // }
+        if (item.hasOwnProperty("image_gallery")) {
+          // console.log(entry.page_content[index])
+          return <ImageGallery key={index} content={item.image_gallery} />;
+        }
         // if (item.hasOwnProperty("cloud_gallery")) {
         //   // console.log(entry.page_content[index])
         //   return <ImageGalleryCloud key={index} content={item.cloud_gallery} />;
