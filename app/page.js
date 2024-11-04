@@ -67,10 +67,10 @@ export default function Home({ params }) {
           // console.log(entry.page_content[index])
           return <Video content={item.video_banner} key={index}  />;
         }
-        // if (item.hasOwnProperty("hero_banner")) {
-        //   console.log(entry.page_content[index])
-        //   return <Hero content={item.hero_banner} key={index}  />;
-        // }
+        if (item.hasOwnProperty("hero_banner")) {
+          console.log(entry.page_content[index])
+          return <Hero content={item.hero_banner} key={index}  />;
+        }
       })}
       <Footer />
     </>
