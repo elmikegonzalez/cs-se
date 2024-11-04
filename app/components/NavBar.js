@@ -20,7 +20,7 @@ export default function NavBar() {
       "menu",
       [""]
     );
-    // console.log("menu:", entry[0][0]);
+    console.log("menu:", entry[0][0]);/**/
     setEntry(entry[0][0]);
     SetLoading(false);
   };
