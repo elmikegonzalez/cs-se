@@ -42,10 +42,10 @@ export default function Home({ params }) {
       {/*<Video content={entry.video_banner}/>*/}
       {/*<Hero content={entry.hero_banner} />*/}
       {entry.page_content?.map((item, index) => {
-        // if (item.hasOwnProperty("text_block")) {
-        //   // console.log(entry.page_content[index])
-        //   return <TextBlock key={index} content={item.text_block} />;
-        // }
+        if (item.hasOwnProperty("text_block")) {
+          // console.log(entry.page_content[index])
+          return <TextBlock key={index} content={item.text_block} />;
+        }
         // if (item.hasOwnProperty("image_gallery")) {
         //   // console.log(entry.page_content[index])
         //   return <ImageGallery key={index} content={item.image_gallery} />;
