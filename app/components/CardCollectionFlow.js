@@ -1,4 +1,5 @@
 import React from "react"
+import {CldImage} from "next-cloudinary";
 
 export default function CardCollectionFlow ({content}) {
     // console.log(content.cards[0].$.content)
@@ -8,9 +9,19 @@ export default function CardCollectionFlow ({content}) {
                 {content.cards.map((card, index) => (
                 <div key={`content.cards[index].$.content}`+Math.random()}
                     className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img className="rounded-t-lg" src={card.image.url} alt=""/>
-                    </a>
+                    {/*<a href="#">*/}
+                    {/*    <img className="rounded-t-lg" src={card.cloud_image[0].url} alt=""/>*/}
+                    {/*</a>*/}
+                    <CldImage className="rounded-t-lg"
+                        src={card.cloud_image[0].url}
+                        width="384" // Transform the image: auto-crop to square aspect_ratio
+                        height="384"
+                        alt={card.image_alt_text}
+                        crop={{
+                            type: 'auto',
+                            source: true
+                        }}
+                    />
                     <div className="p-5">
                         <a href="#">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{card.title}</h5>

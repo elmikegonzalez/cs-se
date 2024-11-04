@@ -8,7 +8,6 @@ export default function Page({ params }) {
 
   const getContent = async () => {
     const entry = await Stack.getElementByUrl("page", "/page/" + params.title);
-    // console.log(params.title);
     setEntry(entry);
   };
 

@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import TextBlock from "./components/TextBlock";
 import Hero from "./components/Hero";
 import ImageGallery from "./components/ImageGallery";
+import ImageGalleryCloud from "./components/ImageGalleryCloud";
 import SplitBlock from "./components/SplitBlock";
 import CardCollection from "./components/CardCollection";
 import CardCollectionFlow from "./components/CardCollectionFlow";
@@ -20,7 +21,7 @@ export default function Home({ params }) {
       "home_page",
       ["hero_banner", "video_banner","page_content.image_gallery.gallery_item.page"]
     );
-    // console.log("homepage:", entry[0][0]);
+    console.log("homepage:", entry[0][0]);
     setEntry(entry[0][0]);
     SetLoading(false);
   };
@@ -32,12 +33,14 @@ export default function Home({ params }) {
   if (loading) {
     return;
   }
-// console.log(entry.video_banner)
+  // console.log(entry.video_banner);
+  // console.log(entry.hero_banner);
+
   return (
     <>
       <NavBar />
-      <Video content={entry.video_banner}/>
-      <Hero content={entry.hero_banner[0]} />
+      {/*<Video content={entry.video_banner}/>*/}
+      {/*<Hero content={entry.hero_banner} />*/}
       {entry.page_content?.map((item, index) => {
         if (item.hasOwnProperty("text_block")) {
           // console.log(entry.page_content[index])
@@ -47,10 +50,15 @@ export default function Home({ params }) {
           // console.log(entry.page_content[index])
           return <ImageGallery key={index} content={item.image_gallery} />;
         }
+        if (item.hasOwnProperty("cloud_gallery")) {
+          // console.log(entry.page_content[index])
+          return <ImageGalleryCloud key={index} content={item.cloud_gallery} />;
+        }
         // if (item.hasOwnProperty("split_block")) {
         //   // console.log(entry.page_content[index])
         //   return <SplitBlock key={index} content={item.split_block} />;
         // }
+
         if (item.hasOwnProperty("card_collection")) {
           // console.log(entry.page_content[index])
           return <CardCollectionFlow key={index} content={item.card_collection} />;
@@ -58,6 +66,10 @@ export default function Home({ params }) {
         if (item.hasOwnProperty("video_banner")) {
           // console.log(entry.page_content[index])
           return <Video content={item.video_banner} key={index}  />;
+        }
+        if (item.hasOwnProperty("hero_banner")) {
+          console.log(entry.page_content[index])
+          return <Hero content={item.hero_banner} key={index}  />;
         }
       })}
       <Footer />
