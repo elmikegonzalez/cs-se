@@ -50,7 +50,7 @@ export default function Video({ content }) {
 
   return (
       <header className="relative flex items-center justify-center h-screen mb-12 overflow">
-          <div className={`relative z-30 p-5 text-5xl text-evil bg-purple-300 bg-opacity-50 rounded-xl ${position_css}`} >
+          <div className={`relative z-30 p-5 text-5xl text-white bg-purple-300 bg-opacity-50 rounded-xl ${position_css}`} >
               <ReactMarkdown>
                   {content.overlay_text}
               </ReactMarkdown>

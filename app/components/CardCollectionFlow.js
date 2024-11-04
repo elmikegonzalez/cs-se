@@ -1,27 +1,28 @@
 import React from "react"
-// import {CldImage} from "next-cloudinary";
+import {CldImage} from "next-cloudinary";
 
 export default function CardCollectionFlow ({content}) {
-    // console.log(content.cards[0].$.content)
+    console.log(content.cards[0].$.content)
     return (
         <div className="max-w-full flex items-center justify-center place-items-center dark:bg-evil">
         <div className="grid auto-cols-max gap-x-8 gap-y-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 p-7">
                 {content.cards.map((card, index) => (
                 <div key={`content.cards[index].$.content}`+Math.random()}
                     className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img className="rounded-t-lg" src={card.cloud_image[0].url} alt=""/>
-                    </a>
-                    {/*<CldImage className="rounded-t-lg"*/}
-                    {/*    src={card.cloud_image[0].url}*/}
-                    {/*    width="384" // Transform the image: auto-crop to square aspect_ratio*/}
-                    {/*    height="384"*/}
-                    {/*    alt={card.image_alt_text}*/}
-                    {/*    crop={{*/}
-                    {/*        type: 'auto',*/}
-                    {/*        source: true*/}
-                    {/*    }}*/}
-                    {/*/>*/}
+                    {/*<a href="#">*/}
+                    {/*    <img className="rounded-t-lg" src={card.cloud_image[0].url} alt=""/>*/}
+                    {/*</a>*/}
+                    <CldImage className="rounded-t-lg"
+                        src={card.cloud_image[0].url}
+                        // src="berlin"
+                        width="384" // Transform the image: auto-crop to square aspect_ratio
+                        height="384"
+                        alt={card.image_alt_text}
+                        crop={{
+                            type: 'auto',
+                            source: true
+                        }}
+                    />
                     <div className="p-5">
                         <a href="#">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{card.title}</h5>

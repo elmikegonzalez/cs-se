@@ -6,7 +6,6 @@ import TextBlock from "./components/TextBlock";
 import Hero from "./components/Hero";
 import ImageGallery from "./components/ImageGallery";
 import ImageGalleryCloud from "./components/ImageGalleryCloud";
-import SplitBlock from "./components/SplitBlock";
 import CardCollection from "./components/CardCollection";
 import CardCollectionFlow from "./components/CardCollectionFlow";
 import Video from "./components/Video"
@@ -54,11 +53,6 @@ export default function Home({ params }) {
           // console.log(entry.page_content[index])
           return <ImageGalleryCloud key={index} content={item.cloud_gallery} />;
         }
-        // if (item.hasOwnProperty("split_block")) {
-        //   // console.log(entry.page_content[index])
-        //   return <SplitBlock key={index} content={item.split_block} />;
-        // }
-
         if (item.hasOwnProperty("card_collection")) {
           // console.log(entry.page_content[index])
           return <CardCollectionFlow key={index} content={item.card_collection} />;
