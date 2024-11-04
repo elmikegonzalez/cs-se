@@ -50,25 +50,25 @@ export default function Home({ params }) {
           // console.log(entry.page_content[index])
           return <ImageGallery key={index} content={item.image_gallery} />;
         }
-        // if (item.hasOwnProperty("cloud_gallery")) {
-        //   // console.log(entry.page_content[index])
-        //   return <ImageGalleryCloud key={index} content={item.cloud_gallery} />;
-        // }
+        if (item.hasOwnProperty("cloud_gallery")) {
+          // console.log(entry.page_content[index])
+          return <ImageGalleryCloud key={index} content={item.cloud_gallery} />;
+        }
         // if (item.hasOwnProperty("split_block")) {
         //   // console.log(entry.page_content[index])
         //   return <SplitBlock key={index} content={item.split_block} />;
         // }
 
-        // if (item.hasOwnProperty("card_collection")) {
-        //   // console.log(entry.page_content[index])
-        //   return <CardCollectionFlow key={index} content={item.card_collection} />;
-        // }
+        if (item.hasOwnProperty("card_collection")) {
+          // console.log(entry.page_content[index])
+          return <CardCollectionFlow key={index} content={item.card_collection} />;
+        }
         if (item.hasOwnProperty("video_banner")) {
           // console.log(entry.page_content[index])
           return <Video content={item.video_banner} key={index}  />;
         }
         if (item.hasOwnProperty("hero_banner")) {
-          console.log(entry.page_content[index])
+          // console.log(entry.page_content[index])
           return <Hero content={item.hero_banner} key={index}  />;
         }
       })}

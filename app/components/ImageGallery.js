@@ -1,5 +1,5 @@
 "use client";
-import { CldImage } from 'next-cloudinary';
+// import { CldImage } from 'next-cloudinary';
 
 export default function ImageGallery({ content }) {
   return (
