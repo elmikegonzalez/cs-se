@@ -3,22 +3,21 @@ import ReactMarkdown from 'react-markdown'
 
 
 export default function Video({ content }) {
-    // console.log(content)
     let position_css
 
-    // let autoPlay = false;
-    // let loop = false;
-    // let muted = false;
-    //
-    // if (content.muted === true){
-    //     autoPlay = true;
-    // }
-    // if (content.loop === true){
-    //     loop = true;
-    // }
-    // if (content.muted === true){
-    //     muted = true;
-    // }
+    let autoPlay = false;
+    let loop = false;
+    let muted = false;
+
+    if (content.muted === true){
+        autoPlay = true;
+    }
+    if (content.loop === true){
+        loop = true;
+    }
+    if (content.muted === true){
+        muted = true;
+    }
 
     if (content.styles && content.styles?.text_align === 'Top Left'){
         position_css = 'pt-24 ml-8 items-start justify-start'
@@ -49,20 +48,20 @@ export default function Video({ content }) {
     }
 
   return (
-      <header className="relative flex items-center justify-center h-screen mb-12 overflow">
-          <div className={`relative z-30 p-5 text-5xl text-white bg-purple-300 bg-opacity-50 rounded-xl ${position_css}`} >
+      <header className="relative flex items-center justify-center h-screen mb-12 overflow" {...content?.$?.overlay_text}>
+          <div className={`relative z-30 p-5 text-5xl text-white bg-purple-300 bg-opacity-50 rounded-xl ${position_css}`} {...content?.$?.overlay_text} >
               <ReactMarkdown>
                   {content.overlay_text}
               </ReactMarkdown>
           </div>
               <video
-                  // autoPlay = {...autoPlay}
-                  // loop = {...loop}
-                  // muted = {...muted}
-                  muted
-                  autoPlay
-                  loop
-                  className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+                  autoPlay = {...autoPlay}
+                  loop = {...loop}
+                  muted = {...muted}
+                  // muted
+                  // autoPlay
+                  // loop
+                  className="absolute z-10 w-auto min-w-full min-h-full max-w-none" {...content?.$?.video.url}
               >
                   <source
                       src={content.video.url}
